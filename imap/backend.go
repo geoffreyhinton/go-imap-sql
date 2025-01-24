@@ -1098,6 +1098,17 @@ func (b *Backend) SetUserPassword(username, newPassword string) error {
 	return nil
 }
 
+func (b *Backend) GetExistingUser(username string) (backend.User, error) {
+	uid, _, _, err := b.UserCreds(username)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return nil, sqlmail.ErrUserDoesntExists
+		}
+		return nil, err
+	}
+	return &User{id: uid, username: username, parent: b}, nil
+}
+
 func (b *Backend) GetUser(username string) (backend.User, error) {
 	uid, _, _, err := b.UserCreds(username)
 	if err != nil {
