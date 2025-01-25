@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/foxcpp/go-sqlmail/imap/testsuite"
+	"github.com/geoffreyhinton/go-imap-sql/imap/testsuite"
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
 	_ "github.com/mattn/go-sqlite3"
