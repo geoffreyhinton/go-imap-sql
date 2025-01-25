@@ -10,7 +10,7 @@ import (
 	"sync"
 
 	"github.com/emersion/go-imap/backend"
-	"github.com/foxcpp/go-sqlmail"
+	"github.com/geoffreyhinton/go-imap-sql"
 	"github.com/pkg/errors"
 	"golang.org/x/crypto/sha3"
 )
